@@ -10,10 +10,20 @@ body {
   justify-content: center;
 }
 
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  outline: red 1px solid;
+}
+
+footer {
+  width: 100%;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
   max-width: 1440px;
 }
@@ -79,6 +89,48 @@ header .header_information .btn {
   line-height: 18.75px;
   cursor: pointer;
   background: linear-gradient(#FF79DA, #9356DC);
+}
+
+/* Fonctionnement */
+.fonctionnement {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 50px 10px;
+  gap: 25px;
+}
+.fonctionnement .fonctionnement_card_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.fonctionnement .fonctionnement_card_container .fonctionnement_card {
+  display: flex;
+  align-items: center;
+}
+.fonctionnement .fonctionnement_card_container .fonctionnement_card .fonctionnement_number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-color: #9356DC;
+}
+.fonctionnement .fonctionnement_card_container .fonctionnement_card .fonctionnement_info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  background-color: #F6F6F6;
+  max-width: 322.49px;
+  height: 72.38px;
+  width: 100%;
+  border-radius: 20px;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1490196078));
 }
 
 /*# sourceMappingURL=style.css.map */
