@@ -5,6 +5,11 @@
   font-family: "Roboto", serif;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -15,7 +20,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  outline: red 1px solid;
+  /*outline: red 1px solid;*/
 }
 
 footer {
@@ -101,31 +106,34 @@ header .header_information .btn {
   justify-content: center;
   /*align-items: center;*/
   box-sizing: border-box;
-  padding: 50px 10px;
+  padding: 50px 15px;
   gap: 25px;
-  outline: blueviolet 1px solid;
+  /*outline: blueviolet 1px solid;*/
 }
 .fonctionnement .fonctionnement_card_container {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border: blue 1px solid;
+  /*border: blue 1px solid;*/
 }
 .fonctionnement .fonctionnement_card_container .fonctionnement_card {
   display: flex;
   align-items: center;
   width: 100%;
-  border: red 1px solid;
+  /*border: red 1px solid;*/
 }
 .fonctionnement .fonctionnement_card_container .fonctionnement_card .fonctionnement_number {
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+  position: static;
   width: 24px;
   height: 24px;
   border-radius: 100%;
+  margin-right: -10px;
+  z-index: 1;
   background-color: #9356DC;
 }
 .fonctionnement .fonctionnement_card_container .fonctionnement_card .fonctionnement_info {
@@ -145,38 +153,111 @@ header .header_information .btn {
 /* Restaurants */
 .restaurants {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #F6F6F6;
+}
+
+.restaurants-box {
+  width: 100%;
   max-width: 375px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  padding: 50px 10px;
+  padding: 50px 15px;
   gap: 25px;
-  background-color: #F6F6F6;
-  outline: blueviolet 1px solid;
+  /*outline: blueviolet 1px solid;*/
 }
-.restaurants .restaurants_container {
+.restaurants-box .restaurants_container {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
-.restaurants .restaurants_container .restaurants_card {
+.restaurants-box .restaurants_container .restaurants_card {
   width: 100%;
   height: 251px;
-  outline: red 1px solid;
+  border-radius: 15px;
+  background-color: white;
+  /*outline: red 1px solid;*/
 }
-.restaurants .restaurants_container .restaurants_card img {
+.restaurants-box .restaurants_container .restaurants_card .badge-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 255px;
+  position: absolute;
+  background-color: #99e2d0;
+  color: #008766;
+  width: 80px;
+  height: 29px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
+}
+.restaurants-box .restaurants_container .restaurants_card .image-restaurant {
   width: 100%;
-  height: 60%;
+  height: 65%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   aspect-ratio: 16/9;
   object-fit: cover;
 }
-.restaurants .restaurants_container .restaurants_card .restaurants_info {
+.restaurants-box .restaurants_container .restaurants_card .restaurants_info {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+}
+.restaurants-box .restaurants_container .restaurants_card .restaurants_info .titre-restaurant {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.09px;
+}
+.restaurants-box .restaurants_container .restaurants_card .restaurants_info .p-restaurant {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 19.92px;
+}
+.restaurants-box .restaurants_container .restaurants_card .restaurants_info .icon-coeur {
+  width: 23px;
+  height: 21px;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  /*flex-direction: column;*/
+  width: 100%;
+  justify-content: center;
+  background-color: #353535;
+  color: white;
+}
+footer .footer-box {
+  width: 100%;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px 25px;
+}
+footer .footer-box p {
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 26.24px;
+}
+footer .footer-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  list-style: none;
+}
+footer .footer-box ul li {
+  display: flex;
+  gap: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
