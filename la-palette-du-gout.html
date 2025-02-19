@@ -6,109 +6,114 @@
     <script src="https://kit.fontawesome.com/0ea338d288.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/restaurants.css">
     <title>Ohmyfood - La palette du goût</title>
 </head>
 <body>
     <div class="main-container">
         <!-- Header -->
         <header>
+            <i class="fa-solid fa-arrow-left"></i>
             <div>
-                <i class="fa-solid fa-arrow-left"></i>
                 <a href="#"><img src="./images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood"></a>
             </div>
-            <img src="" alt="La palette du goût">
         </header>
         <!-- Main -->
         <main>
             <section>
-                <div>
-                    <h1>La palette du goût</h1>
-                    <i class="fa-regular fa-heart"></i>
+                <img class="img-restaurant" src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût">
+                <div class="restaurant-menu">
+                    <div class="info-restaurant">
+                        <h1>La palette du goût</h1>
+                        <a href="#icon">
+                            <img class="icon-coeur" src="./images/icons/coeur.png" alt="Icon Coeur">
+                        </a>
+                    </div>
+
+                    <!-- ENTRÉES -->
+
+                    <div class="menus">
+                        <p>ENTRÉES</p>
+                        <article>
+                            <div>
+                                <h2>Fricassée d'escargots</h2>
+                                <p>Au piment d'Espelette</p>
+                            </div>
+                            <p>25€</p>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Foie gras de canard mi-cuit</h2>
+                                <p>Et ses copeaux de truffe noire</p>
+                            </div>
+                            <p>35€</p>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Œuf au plat</h2>
+                                <p>Assaisonné à la truffe sur lit de caviar</p>
+                            </div>
+                            <p>20€</p>
+                        </article>
+                    </div>
+
+                    <!-- PLATS -->
+
+                    <div class="menus">
+                        <p>PLATS</p>
+                        <article>
+                            <div>
+                                <h2>Filet de bœuf aux herbes</h2>
+                                <p>Accompagné de sa ribambelle de légumes</p>
+                            </div>
+                            <p>40€</p>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Parmentier de queue de bœuf</h2>
+                                <p>À la truffe noire sur sa purée de panais</p>
+                            </div>
+                            <p>35€</p>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Filet de turbot</h2>
+                                <p>Aux agrumes</p>
+                            </div>
+                            <p>44€</p>
+                        </article>
+                    </div>
+
+                    <!-- PLATS -->
+
+                    <div class="menus">
+                        <p>DESSERTS</p>
+                        <article>
+                            <div>
+                                <h2>Paris-Brest</h2>
+                                <p>Revisité</p>
+                            </div>
+                            <p>18€</p>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Macaron au chocolat d'exception</h2>
+                                <p>Et glace à la vanille de Madagascar</p>
+                            </div>
+                            <p>22€</p>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Mousse au chocolat</h2>
+                                <p>Au piment d'Espelette et à la truffe noire</p>
+                            </div>
+                            <p>23€</p>
+                        </article>
+                    </div>
+                    <button class="btn">Commander</button>
                 </div>
-
-                <!-- ENTRÉES -->
-
-                <div>
-                    <p>ENTRÉES</p>
-                    <article>
-                        <div>
-                            <h2>Fricassée d'escargots</h2>
-                            <p>Au piment d'Espelette</p>
-                        </div>
-                        <p>25€</p>
-                    </article>
-                    <article>
-                        <div>
-                            <h2>Foie gras de canard mi-cuit</h2>
-                            <p>Et ses copeaux de truffe noire</p>
-                        </div>
-                        <p>35€</p>
-                    </article>
-                    <article>
-                        <div>
-                            <h2>Œuf au plat</h2>
-                            <p>Assaisonné à la truffe sur lit de caviar</p>
-                        </div>
-                        <p>20€</p>
-                    </article>
-                </div>
-
-                <!-- PLATS -->
-
-                <div>
-                    <p>PLATS</p>
-                    <article>
-                        <div>
-                            <h2>Filet de bœuf aux herbes</h2>
-                            <p>Accompagné de sa ribambelle de légumes</p>
-                        </div>
-                        <p>40€</p>
-                    </article>
-                    <article>
-                        <div>
-                            <h2>Parmentier de queue de bœuf</h2>
-                            <p>À la truffe noire sur sa purée de panais</p>
-                        </div>
-                        <p>35€</p>
-                    </article>
-                    <article>
-                        <div>
-                            <h2>Filet de turbot</h2>
-                            <p>Aux agrumes</p>
-                        </div>
-                        <p>44€</p>
-                    </article>
-                </div>
-
-                <!-- PLATS -->
-
-                <div>
-                    <p>DESSERTS</p>
-                    <article>
-                        <div>
-                            <h2>Paris-Brest</h2>
-                            <p>Revisité</p>
-                        </div>
-                        <p>18€</p>
-                    </article>
-                    <article>
-                        <div>
-                            <h2>Macaron au chocolat d'exception</h2>
-                            <p>Et glace à la vanille de Madagascar</p>
-                        </div>
-                        <p>22€</p>
-                    </article>
-                    <article>
-                        <div>
-                            <h2>Mousse au chocolat</h2>
-                            <p>Au piment d'Espelette et à la truffe noire</p>
-                        </div>
-                        <p>23€</p>
-                    </article>
-                </div>
-                <button>Commander</button>
             </section>
         </main>
         <!-- Footer -->
