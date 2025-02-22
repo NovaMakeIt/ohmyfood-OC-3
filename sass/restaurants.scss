@@ -84,13 +84,16 @@ main {
         }
 
         .restaurant-menu {
+            position: relative;
+            margin-top: -40px;
+            z-index: 10;
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 100%;
             max-width: 1055px;
             gap: 40px;
-            padding: 40px 0;
+            padding: 40px 15px;
             border-top-left-radius: 40px;
             border-top-right-radius: 40px;
             background-color: #f6f6f6;
@@ -115,8 +118,101 @@ main {
             }
 
             .menus {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
                 width: 100%;
                 max-width: 634px;
+
+                .menus_titre {
+                  display: flex;
+                  flex-direction: column;
+                  position: relative;
+                  font-weight: 300;
+                  font-size: 16px;
+                  line-height: 18.75px;
+
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -5px;
+                    left: 1px;
+                    width: 40px;
+                    height: 3px;
+                    background-color: $lightGreen;
+                  }
+                }
+
+                .menus_info {
+                  display: flex;
+                  width: 100%;
+                  background-color: white;
+                  justify-content: space-between;
+                  border-radius: 15px;
+                  padding: 15px;
+                  box-shadow: 0px 4.01px 15.04px 0px #0000001A;
+                  /**/
+                  position: relative;
+                  overflow: hidden;
+                  transition: padding-right 1s ease-in-out;
+
+                  h2 {
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 21.09px;
+                    color: #000000;
+                  }
+
+                  .info-plus {
+                    font-weight: 300;
+                    font-size: 15px;
+                    line-height: 17.63px;
+                  }
+
+                  .prix {
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 17.63px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                  }
+
+                  .hover-effect {
+                    position: absolute;
+                    right: 0; 
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 0px;
+                    height: 100%;
+                    background-color: $lightGreen;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-top-right-radius: 15px;
+                    border-bottom-right-radius: 15px;
+                    transition: width 1s ease-in-out;
+            
+                      i {
+                          color: white;
+                          font-size: 20px;
+                          opacity: 0;
+                          transition: opacity 0.3s ease-in-out 0.3s;
+                      }
+                  }
+            
+                  &:hover {
+                      padding-right: 59px;
+                  }
+              
+                  &:hover .hover-effect {
+                      width: 59px;
+                  }
+
+                  &:hover .hover-effect i {
+                      opacity: 1;
+                  }
+                }
             }
 
             .btn {
@@ -133,4 +229,44 @@ main {
               }
         }
     }
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  /*flex-direction: column;*/
+  width: 100%;
+  justify-content: center;
+  background-color: #353535;
+  color: white;
+
+  .footer-box {
+    width: 100%;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 22px 25px;
+
+    p {
+      font-family: "Shrikhand", serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 18px;
+      line-height: 26.24px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      list-style: none;
+
+      li {
+        display: flex;
+        gap: 15px;
+      }
+    }
+  }
 }

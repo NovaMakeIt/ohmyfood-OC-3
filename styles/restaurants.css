@@ -69,13 +69,16 @@ main section .img-restaurant {
   object-fit: cover;
 }
 main section .restaurant-menu {
+  position: relative;
+  margin-top: -40px;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   max-width: 1055px;
   gap: 40px;
-  padding: 40px 0;
+  padding: 40px 15px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   background-color: #f6f6f6;
@@ -97,8 +100,90 @@ main section .restaurant-menu .info-restaurant .icon-coeur {
   height: 21px;
 }
 main section .restaurant-menu .menus {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   width: 100%;
   max-width: 634px;
+}
+main section .restaurant-menu .menus .menus_titre {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18.75px;
+}
+main section .restaurant-menu .menus .menus_titre::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 1px;
+  width: 40px;
+  height: 3px;
+  background-color: #99e2d0;
+}
+main section .restaurant-menu .menus .menus_info {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
+  /**/
+  position: relative;
+  overflow: hidden;
+  transition: padding-right 1s ease-in-out;
+}
+main section .restaurant-menu .menus .menus_info h2 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.09px;
+  color: #000000;
+}
+main section .restaurant-menu .menus .menus_info .info-plus {
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 17.63px;
+}
+main section .restaurant-menu .menus .menus_info .prix {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 17.63px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+main section .restaurant-menu .menus .menus_info .hover-effect {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0px;
+  height: 100%;
+  background-color: #99e2d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: width 1s ease-in-out;
+}
+main section .restaurant-menu .menus .menus_info .hover-effect i {
+  color: white;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out 0.3s;
+}
+main section .restaurant-menu .menus .menus_info:hover {
+  padding-right: 59px;
+}
+main section .restaurant-menu .menus .menus_info:hover .hover-effect {
+  width: 59px;
+}
+main section .restaurant-menu .menus .menus_info:hover .hover-effect i {
+  opacity: 1;
 }
 main section .restaurant-menu .btn {
   width: 186px;
@@ -111,6 +196,41 @@ main section .restaurant-menu .btn {
   line-height: 18.75px;
   cursor: pointer;
   background: linear-gradient(#FF79DA, #9356DC);
+}
+
+/* Footer */
+footer {
+  display: flex;
+  /*flex-direction: column;*/
+  width: 100%;
+  justify-content: center;
+  background-color: #353535;
+  color: white;
+}
+footer .footer-box {
+  width: 100%;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px 25px;
+}
+footer .footer-box p {
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 26.24px;
+}
+footer .footer-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  list-style: none;
+}
+footer .footer-box ul li {
+  display: flex;
+  gap: 15px;
 }
 
 /*# sourceMappingURL=restaurants.css.map */
