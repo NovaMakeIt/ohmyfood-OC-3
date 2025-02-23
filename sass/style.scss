@@ -49,6 +49,59 @@ footer {
   line-height: 28.13px;
 }
 
+/* Loader */
+
+// Animation de rotation du loader
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Animation de disparition
+@keyframes fadeOut {
+  0% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 0.5s ease-out 2s forwards; // Disparaît après 3s
+
+  .loader {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .loader-logo {
+          width: 80px; // Taille du logo
+          height: auto;
+          z-index: 2;
+      }
+
+      .spinner {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border: 5px solid transparent;
+          border-top: 5px solid $purple; // Couleur rose du loader
+          border-radius: 50%;
+          animation: spin 1s linear infinite; // Rotation continue
+      }
+  }
+}
+
 /* Header */
 
 header {
@@ -74,6 +127,10 @@ header {
     gap: 17px;
     background-color:#EAEAEA;
     filter: drop-shadow(0px 4px 4px #00000040);
+
+    @media (min-width: 1024px) {
+      filter: none;
+    }
 
   }
 
@@ -177,8 +234,9 @@ header {
 
 /* Restaurants */
 
-a {
-  border: green 1px solid;
+.ancre-restaurant {
+  width: 100%;
+  max-width: 490px;
 }
 
 .restaurants {
@@ -197,7 +255,7 @@ a {
   box-sizing: border-box;
   padding: 50px 15px;
   gap: 25px;
-  outline: blueviolet 1px solid;
+  /*outline: blueviolet 1px solid;*/
 
   @media (min-width: 1100px) {
     max-width: 1100px;
@@ -212,7 +270,7 @@ a {
     @media (min-width: 1100px) {
       flex-direction: row;
       justify-content: space-between;
-      outline: blueviolet 1px solid;
+      /*outline: blueviolet 1px solid;*/
     }
 
     .restaurants_card {
@@ -221,11 +279,10 @@ a {
       flex-direction: column;
       overflow: hidden;
       width: 100%;
-      max-width: 490px;
       height: 251px;
       border-radius: 15px;
       background-color: white;
-      outline: red 1px solid;
+      /*outline: red 1px solid;*/
 
       .badge-new {
         display: flex;
@@ -274,10 +331,41 @@ a {
           line-height: 19.92px;
         }
 
-        .icon-coeur {
+        .coeur {
+          position: relative;
           width: 23px;
           height: 21px;
-        }
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      
+          .checkbox-coeur {
+              display: none;
+          }
+      
+          .icon-coeur-filled {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              transition: opacity 0.3s ease-in-out;
+          }
+      
+          &:hover .icon-coeur-filled {
+              opacity: 1;
+          }
+      
+          .checkbox-coeur:checked ~ .icon-coeur {
+              opacity: 0;
+          }
+      
+          .checkbox-coeur:checked ~ .icon-coeur-filled {
+              opacity: 1;
+          }
+      }
       }
     }
   }
@@ -287,11 +375,14 @@ a {
 
 footer {
   display: flex;
-  /*flex-direction: column;*/
   width: 100%;
   justify-content: center;
   background-color: #353535;
   color: white;
+
+  @media (min-width: 1024px) {
+    height: 114px;
+  }
 
   .footer-box {
     width: 100%;
@@ -301,12 +392,23 @@ footer {
     gap: 16px;
     padding: 22px 25px;
 
+    @media (min-width: 1024px) {
+      max-width: none;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      margin-top: 35px;
+    }
+
     p {
       font-family: "Shrikhand", serif;
       font-weight: 400;
       font-style: italic;
       font-size: 18px;
       line-height: 26.24px;
+
+      @media (min-width: 1024px) {
+        margin-right: 50px;
+      }
     }
 
     ul {
@@ -315,9 +417,27 @@ footer {
       gap: 7px;
       list-style: none;
 
+      @media (min-width: 1024px) {
+        flex-direction: row;
+        margin-right: 70px;
+        gap: 50px;
+      }
+
+      .footer-div {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        font-weight: 500;
+
+        @media (min-width: 1024px) {
+          flex-direction: row;
+          gap: 20px;
+        }
+      }
+
       li {
         display: flex;
-        gap: 15px;
+        gap: 10px;
       }
     }
   }

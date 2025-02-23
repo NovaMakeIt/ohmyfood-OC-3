@@ -59,9 +59,9 @@ header {
     width: 100%;
     height: 63px;
 
-    .fa-arrow-left {
-        position: absolute;
-        left: 23px;
+    .ancre-icon {
+      position: absolute;
+      left: 23px;
     }
 }
 
@@ -111,10 +111,42 @@ main {
                     line-height: 40.82px;
                 }
                 
-                .icon-coeur {
-                    width: 23px;
-                    height: 21px;
+                .coeur {
+                  position: relative;
+                  width: 23px;
+                  height: 21px;
+                  cursor: pointer;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+              
+                  .checkbox-coeur {
+                      display: none;
                   }
+              
+                  .icon-coeur-filled {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      opacity: 0;
+                      transition: opacity 0.3s ease-in-out;
+                  }
+              
+                  &:hover .icon-coeur-filled {
+                      opacity: 1;
+                  }
+              
+                  .checkbox-coeur:checked ~ .icon-coeur {
+                      opacity: 0;
+                  }
+              
+                  .checkbox-coeur:checked ~ .icon-coeur-filled {
+                      opacity: 1;
+                  }
+              }
+              
             }
 
             .menus {
@@ -152,6 +184,7 @@ main {
                   padding: 15px;
                   box-shadow: 0px 4.01px 15.04px 0px #0000001A;
                   /**/
+                  cursor: pointer;
                   position: relative;
                   overflow: hidden;
                   transition: padding-right 1s ease-in-out;
@@ -203,6 +236,9 @@ main {
             
                   &:hover {
                       padding-right: 59px;
+                      .prix {
+                        margin-right: 15px;
+                    }
                   }
               
                   &:hover .hover-effect {
@@ -235,11 +271,14 @@ main {
 
 footer {
   display: flex;
-  /*flex-direction: column;*/
   width: 100%;
   justify-content: center;
   background-color: #353535;
   color: white;
+
+  @media (min-width: 1024px) {
+    height: 114px;
+  }
 
   .footer-box {
     width: 100%;
@@ -249,12 +288,23 @@ footer {
     gap: 16px;
     padding: 22px 25px;
 
+    @media (min-width: 1024px) {
+      max-width: none;
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+      margin-top: 35px;
+    }
+
     p {
       font-family: "Shrikhand", serif;
       font-weight: 400;
       font-style: italic;
       font-size: 18px;
       line-height: 26.24px;
+
+      @media (min-width: 1024px) {
+        margin-right: 50px;
+      }
     }
 
     ul {
@@ -263,9 +313,27 @@ footer {
       gap: 7px;
       list-style: none;
 
+      @media (min-width: 1024px) {
+        flex-direction: row;
+        margin-right: 70px;
+        gap: 50px;
+      }
+
+      .footer-div {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        font-weight: 500;
+
+        @media (min-width: 1024px) {
+          flex-direction: row;
+          gap: 20px;
+        }
+      }
+
       li {
         display: flex;
-        gap: 15px;
+        gap: 10px;
       }
     }
   }

@@ -15,7 +15,9 @@
     <div class="main-container">
         <!-- Header -->
         <header>
-            <i class="fa-solid fa-arrow-left"></i>
+            <a class="ancre-icon" href="index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
             <div>
                 <a href="#"><img src="./images/logo/ohmyfood@2x.svg" alt="Logo Ohmyfood"></a>
             </div>
@@ -27,9 +29,11 @@
                 <div class="restaurant-menu">
                     <div class="info-restaurant">
                         <h1>La palette du goût</h1>
-                        <a href="#icon">
+                        <label class="coeur">
+                            <input type="checkbox" class="checkbox-coeur">
                             <img class="icon-coeur" src="./images/icons/coeur.png" alt="Icon Coeur">
-                        </a>
+                            <img class="icon-coeur-filled" src="./images/icons/coeur-rempli.png" alt="Icon Coeur Rempli">
+                        </label>
                     </div>
 
                     <!-- ENTRÉES -->
@@ -148,10 +152,14 @@
             <div class="footer-box">
                 <p>ohmyfood</p>
                 <ul>
-                    <li><i class="fa-solid fa-utensils"></i>Proposer un restaurant</li>
-                    <li><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</li>
-                    <li>Mentions légales</li>
-                    <li>Contact</li>
+                    <div class="footer-div">
+                        <a href="#"><li><i class="fa-solid fa-utensils"></i>Proposer un restaurant</li></a>
+                        <a href="#"><li><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</li></a>
+                    </div>
+                    <div class="footer-div">
+                        <a href="#"><li>Mentions légales</li></a>
+                        <a href="mailto:ohmyfood@contact.com"><li>Contact</li></a>
+                    </div>
                 </ul>
             </div>
         </footer>
