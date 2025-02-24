@@ -149,35 +149,76 @@ main section .restaurant-menu .menus .menus_titre::after {
   height: 3px;
   background-color: #99e2d0;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 main section .restaurant-menu .menus .menus_info {
   display: flex;
   width: 100%;
   background-color: white;
   justify-content: space-between;
   border-radius: 15px;
-  padding: 15px;
   box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
   /**/
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: padding-right 1s ease-in-out;
+  /**/
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+main section .restaurant-menu .menus .menus_info .menus_info:nth-child(1) {
+  animation-delay: 0.3s;
+}
+main section .restaurant-menu .menus .menus_info .menus_info:nth-child(2) {
+  animation-delay: 0.6s;
+}
+main section .restaurant-menu .menus .menus_info .menus_info:nth-child(3) {
+  animation-delay: 0.9s;
+}
+main section .restaurant-menu .menus .menus_info .menus-text {
+  display: flex;
+  padding: 15px;
 }
 main section .restaurant-menu .menus .menus_info h2 {
   font-weight: 500;
   font-size: 18px;
   line-height: 21.09px;
   color: #000000;
+  /**/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  display: block;
+}
+main section .restaurant-menu .menus .menus_info div {
+  width: 100%;
 }
 main section .restaurant-menu .menus .menus_info .info-plus {
   font-weight: 300;
   font-size: 15px;
   line-height: 17.63px;
+  /**/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  display: block;
 }
 main section .restaurant-menu .menus .menus_info .prix {
   font-weight: 700;
   font-size: 15px;
   line-height: 17.63px;
+  width: 27px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -205,9 +246,6 @@ main section .restaurant-menu .menus .menus_info .hover-effect i {
 }
 main section .restaurant-menu .menus .menus_info:hover {
   padding-right: 59px;
-}
-main section .restaurant-menu .menus .menus_info:hover .prix {
-  margin-right: 15px;
 }
 main section .restaurant-menu .menus .menus_info:hover .hover-effect {
   width: 59px;

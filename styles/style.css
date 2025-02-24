@@ -70,7 +70,7 @@ footer {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  animation: fadeOut 0.5s ease-out 2s forwards;
+  animation: fadeOut 0.5s ease-out 0.1s forwards;
 }
 .loader-container .loader {
   position: relative;
@@ -154,7 +154,13 @@ header .header_information .btn {
   font-size: 16px;
   line-height: 18.75px;
   cursor: pointer;
-  background: linear-gradient(#FF79DA, #9356DC);
+  background: linear-gradient(#ff79da 0%, #9356dc 100%);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  transition: box-shadow 0.3s ease-in-out;
+}
+header .header_information .btn:hover {
+  background: linear-gradient(rgb(255, 146.5, 225.0410447761) 0%, rgb(160.5, 107.125, 224.375) 100%);
+  box-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.2509803922);
 }
 
 /* Fonctionnement */
@@ -209,15 +215,23 @@ header .header_information .btn {
 .fonctionnement .fonctionnement_card_container .fonctionnement_card .fonctionnement_info {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 25px;
   background-color: #F6F6F6;
   max-width: 322.49px;
   height: 72.38px;
   width: 100%;
   border-radius: 20px;
-  /*filter: drop-shadow(0px 4px 6px #00000026);*/
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1490196078);
+}
+.fonctionnement .fonctionnement_card_container .fonctionnement_card .fonctionnement_info i, .fonctionnement .fonctionnement_card_container .fonctionnement_card .fonctionnement_info p {
+  margin-left: 30px;
+}
+.fonctionnement .fonctionnement_card_container .fonctionnement_card .fonctionnement_info i {
+  color: #7e7e7e;
+}
+.fonctionnement .fonctionnement_card_container .fonctionnement_card .fonctionnement_info p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18.75px;
 }
 
 /* Restaurants */
