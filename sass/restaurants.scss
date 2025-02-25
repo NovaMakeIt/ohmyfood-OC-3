@@ -155,7 +155,7 @@ main {
               gap: 12px;
               width: 100%;
               max-width: 634px;
-
+            
               .menus_titre {
                 display: flex;
                 flex-direction: column;
@@ -163,7 +163,7 @@ main {
                 font-weight: 300;
                 font-size: 16px;
                 line-height: 18.75px;
-
+            
                 &::after {
                   content: "";
                   position: absolute;
@@ -174,7 +174,7 @@ main {
                   background-color: $lightGreen;
                 }
               }
-
+            
               @keyframes fadeIn {
                 from {
                   opacity: 0;
@@ -185,84 +185,79 @@ main {
                   transform: translateY(0);
                 }
               }
-
+            
               .menus_info {
                 display: flex;
                 width: 100%;
                 background-color: white;
-                justify-content: space-between;
                 border-radius: 15px;
                 box-shadow: 0px 4.01px 15.04px 0px #0000001A;
-                /**/
                 cursor: pointer;
                 position: relative;
                 overflow: hidden;
-                transition: padding-right 1s ease-in-out;
-                /**/
                 opacity: 0;
                 animation: fadeIn 1s ease-in-out forwards;
-
-                // Appliquer un décalage progressif
-                .menus_info:nth-child(1) {
+            
+                &:nth-child(2) {
                   animation-delay: 0.3s;
                 }
-                .menus_info:nth-child(2) {
+                &:nth-child(3) {
                   animation-delay: 0.6s;
                 }
-                .menus_info:nth-child(3) {
+                &:nth-child(4) {
                   animation-delay: 0.9s;
                 }
-
+            
                 .menus-text {
                   display: flex;
                   padding: 15px;
-                }
-
-                h2 {
-                  font-weight: 500;
-                  font-size: 18px;
-                  line-height: 21.09px;
-                  color: #000000;
-                  /**/
-                  white-space: nowrap;
-                  overflow: hidden;
-                  text-overflow: ellipsis;
-                  max-width: 80%;
-                  display: block;
-                }
-
-                div {
                   width: 100%;
+                  transition: width 0.5s ease-in-out;
+            
+                  .menus-text_info {
+                    flex: 1;
+                    min-width: 0;
+                    margin-right: 10px;
+            
+                    h2 {
+                      font-weight: 500;
+                      font-size: 18px;
+                      line-height: 21.09px;
+                      color: #000000;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      width: 100%;
+                    }
+            
+                    .info-plus {
+                      font-weight: 300;
+                      font-size: 15px;
+                      line-height: 17.63px;
+                      margin-top: 5px;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      width: 100%;
+                    }
+                  }
+            
+                  .prix {
+                    font-weight: 700;
+                    font-size: 15px;
+                    line-height: 17.63px;
+                    display: flex;
+                    align-items: flex-end;
+                    white-space: nowrap;
+                    margin-left: auto;
+                  }
                 }
-
-                .info-plus {
-                  font-weight: 300;
-                  font-size: 15px;
-                  line-height: 17.63px;
-                  /**/
-                  white-space: nowrap;
-                  overflow: hidden;
-                  text-overflow: ellipsis;
-                  max-width: 80%;
-                  display: block;
-                }
-
-                .prix {
-                  font-weight: 700;
-                  font-size: 15px;
-                  line-height: 17.63px;
-                  width: 27px;
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: flex-end;
-                }
-
+            
                 .hover-effect {
                   position: absolute;
-                  right: 0; 
-                  top: 50%;
-                  transform: translateY(-50%);
-                  width: 0px;
+                  right: -59px; /* Start off-screen */
+                  top: 0;
+                  width: 59px;
                   height: 100%;
                   background-color: $lightGreen;
                   display: flex;
@@ -270,29 +265,28 @@ main {
                   justify-content: center;
                   border-top-right-radius: 15px;
                   border-bottom-right-radius: 15px;
-                  transition: width 1s ease-in-out;
-          
-                    i {
-                        color: white;
-                        font-size: 20px;
-                        opacity: 0;
-                        transition: opacity 0.3s ease-in-out 0.3s;
-                    }
+                  transition: right 0.5s ease-in-out;
+            
+                  i {
+                    color: white;
+                    font-size: 20px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out 0.3s;
+                  }
                 }
-          
-                &:hover {
-                    padding-right: 59px;
+            
+                &:hover .menus-text {
+                  width: calc(100% - 59px);
                 }
             
                 &:hover .hover-effect {
-                    width: 59px;
+                  right: 0;
                 }
-
+            
                 &:hover .hover-effect i {
-                    opacity: 1;
+                  opacity: 1;
                 }
               }
-            
             }
 
             .btn {
@@ -305,8 +299,15 @@ main {
                 font-size: 16px;
                 line-height: 18.75px;
                 cursor: pointer;
-                background: linear-gradient($pink, $purple);
+                background: linear-gradient(lighten($pink, 0%) 0%, lighten($purple, 0%) 100%);
+                box-shadow: 0px 4px 10px 0px #00000040;
+                transition: box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                  background: linear-gradient(lighten($pink, 5%) 0%, lighten($purple, 5%) 100%);
+                  box-shadow: 0px 8px 18px 0px #00000040;
               }
+            }
         }
     }
 }

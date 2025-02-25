@@ -70,7 +70,7 @@ footer {
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  animation: fadeOut 0.5s ease-out 0.1s forwards;
+  animation: fadeOut 0.5s ease-out 2s forwards;
 }
 .loader-container .loader {
   position: relative;
@@ -117,6 +117,7 @@ header .header_location {
   width: 100%;
   gap: 17px;
   background-color: #EAEAEA;
+  color: #353535;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2509803922));
 }
 @media (min-width: 1024px) {
@@ -285,6 +286,7 @@ header .header_information .btn:hover {
   height: 251px;
   border-radius: 15px;
   background-color: white;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   /*outline: red 1px solid;*/
 }
 .restaurants-box .restaurants_container .restaurants_card .badge-new {
@@ -329,6 +331,7 @@ header .header_information .btn:hover {
   font-weight: 300;
   font-size: 17px;
   line-height: 19.92px;
+  margin-top: 5px;
 }
 .restaurants-box .restaurants_container .restaurants_card .restaurants_info .coeur {
   position: relative;
