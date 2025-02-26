@@ -21,7 +21,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*outline: red 1px solid;*/
 }
 
 footer {
@@ -222,7 +221,7 @@ main section .restaurant-menu .menus .menus_info .menus-text .prix {
 }
 main section .restaurant-menu .menus .menus_info .hover-effect {
   position: absolute;
-  right: -59px; /* Start off-screen */
+  right: -59px;
   top: 0;
   width: 59px;
   height: 100%;
@@ -318,18 +317,20 @@ footer .footer-box ul {
 @media (min-width: 1024px) {
   footer .footer-box ul {
     flex-direction: row;
-    margin-right: 70px;
-    gap: 50px;
+    margin-right: 35px;
+    gap: 40px;
   }
 }
-footer .footer-box ul .footer-div {
+footer .footer-box ul .li-group .sub-menu {
   display: flex;
   flex-direction: column;
   gap: 7px;
   font-weight: 500;
+  font-size: 16px;
+  line-height: 18.75px;
 }
 @media (min-width: 1024px) {
-  footer .footer-box ul .footer-div {
+  footer .footer-box ul .li-group .sub-menu {
     flex-direction: row;
     gap: 20px;
   }
@@ -337,6 +338,9 @@ footer .footer-box ul .footer-div {
 footer .footer-box ul li {
   display: flex;
   gap: 10px;
+}
+footer .footer-box ul li i {
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=restaurants.css.map */
